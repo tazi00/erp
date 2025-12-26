@@ -1029,6 +1029,96 @@
       </div>
     </section>
 
+    <section class="modules">
+      <div class="container">
+        <div class="header">
+          <h2>Our Modules</h2>
+          <p>Explore our comprehensive management solutions</p>
+        </div>
+
+        <div class="slider-wrapper">
+          <button class="nav-button left" id="prevBtn">‹</button>
+          <button class="nav-button right" id="nextBtn">›</button>
+
+          <div class="slider-container" id="slider">
+            <div class="card">
+              <span class="card-number">01</span>
+              <h2 class="card-title">Admission Management</h2>
+              <p class="card-description">
+                Centralized admission module to manage counsellors, associates,
+                accountants, fees, payouts and dues with complete transparency
+                and real-time tracking.
+              </p>
+              <a href="/pricing.html" class="card-button">Explore Pricing</a>
+            </div>
+
+            <div class="card">
+              <span class="card-number">02</span>
+              <h2 class="card-title">Cashbook Management</h2>
+              <p class="card-description">
+                Digitally records daily cash inflow and outflow with clear
+                entries, balances and reports for complete financial
+                transparency.
+              </p>
+              <a href="/pricing.html" class="card-button">Explore Pricing</a>
+            </div>
+
+            <div class="card">
+              <span class="card-number">03</span>
+              <h2 class="card-title">Expenses Management</h2>
+              <p class="card-description">
+                Controls institutional expenses by recording, categorizing,
+                approving and analyzing spending to maintain financial
+                discipline.
+              </p>
+              <a href="/pricing.html" class="card-button">Explore Pricing</a>
+            </div>
+
+            <div class="card">
+              <span class="card-number">04</span>
+              <h2 class="card-title">Reception Management</h2>
+              <p class="card-description">
+                Manages front-desk operations, including visitor entries,
+                inquiry tracking, call logs and lead forwarding efficiently.
+              </p>
+              <a href="/pricing.html" class="card-button">Explore Pricing</a>
+            </div>
+
+            <div class="card">
+              <span class="card-number">05</span>
+              <h2 class="card-title">Sequence Management</h2>
+              <p class="card-description">
+                Automates lead handling sequences for associates, accountants
+                and direct leads to maintain structured follow-ups and
+                workflows.
+              </p>
+              <a href="/pricing.html" class="card-button">Explore Pricing</a>
+            </div>
+
+            <div class="card">
+              <span class="card-number">06</span>
+              <h2 class="card-title">Attendance Management</h2>
+              <p class="card-description">
+                Tracks staff attendance digitally with accurate records, reports
+                and compliance support for better workforce management.
+              </p>
+              <a href="/pricing.html" class="card-button">Explore Pricing</a>
+            </div>
+
+            <div class="card">
+              <span class="card-number">07</span>
+              <h2 class="card-title">Task List Management</h2>
+              <p class="card-description">
+                Organizes daily tasks, responsibilities and deadlines for teams
+                to improve productivity, accountability and workflow clarity.
+              </p>
+              <a href="/pricing.html" class="card-button">Explore Pricing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="comm-section">
       <div class="comm-container">
         <!-- LEFT CONTENT -->
@@ -1959,6 +2049,82 @@
           link.addEventListener("click", closeSidebar);
         });
       });
+    </script>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      // Drag to scroll functionality
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        slider.style.cursor = "grabbing";
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener("mouseleave", () => {
+        isDown = false;
+        slider.style.cursor = "grab";
+      });
+
+      slider.addEventListener("mouseup", () => {
+        isDown = false;
+        slider.style.cursor = "grab";
+      });
+
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      // Touch support for mobile
+      slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener("touchmove", (e) => {
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      // Navigation buttons
+      prevBtn.addEventListener("click", () => {
+        const cardWidth = slider.querySelector(".card").offsetWidth;
+        slider.scrollBy({
+          left: -(cardWidth + 30),
+          behavior: "smooth",
+        });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        const cardWidth = slider.querySelector(".card").offsetWidth;
+        slider.scrollBy({
+          left: cardWidth + 30,
+          behavior: "smooth",
+        });
+      });
+
+      // Update button states
+      function updateButtons() {
+        prevBtn.disabled = slider.scrollLeft <= 0;
+        nextBtn.disabled =
+          slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 1;
+      }
+
+      slider.addEventListener("scroll", updateButtons);
+      window.addEventListener("resize", updateButtons);
+      updateButtons();
     </script>
     <script src="./scripts.js"></script>
   </body>
