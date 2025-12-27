@@ -2100,19 +2100,25 @@
 
       // Navigation buttons
       prevBtn.addEventListener("click", () => {
-        const cardWidth = slider.querySelector(".card").offsetWidth;
-        slider.scrollBy({
-          left: -(cardWidth + 30),
-          behavior: "smooth",
-        });
+        const card = slider.querySelector(".card");
+        if (card) {
+          const cardWidth = card.offsetWidth;
+          slider.scrollBy({
+            left: -(cardWidth + 30),
+            behavior: "smooth",
+          });
+        }
       });
 
       nextBtn.addEventListener("click", () => {
-        const cardWidth = slider.querySelector(".card").offsetWidth;
-        slider.scrollBy({
-          left: cardWidth + 30,
-          behavior: "smooth",
-        });
+        const card = slider.querySelector(".card");
+        if (card) {
+          const cardWidth = card.offsetWidth;
+          slider.scrollBy({
+            left: cardWidth + 30,
+            behavior: "smooth",
+          });
+        }
       });
 
       // Update button states
@@ -2124,7 +2130,9 @@
 
       slider.addEventListener("scroll", updateButtons);
       window.addEventListener("resize", updateButtons);
-      updateButtons();
+
+      // Initial update after a short delay to ensure layout is complete
+      setTimeout(updateButtons, 100);
     </script>
     <script src="./scripts.js"></script>
   </body>

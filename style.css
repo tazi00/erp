@@ -4051,6 +4051,11 @@ section.pricing-sec {
     color: var(--secondary-clr);
     font-family: var(--font-display-medium);
     margin-bottom: 50px;
+
+    @media (max-width: 767px) {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
   }
 
   p {
