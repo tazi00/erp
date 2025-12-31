@@ -332,8 +332,10 @@
         padding-left: 5px;
         img {
           object-fit: cover;
-          width: 110px;
-          margin-top: 4px;
+          width: 86px;
+          height: 66px;
+          margin-top: -8px;
+          margin-bottom: 7px;
         }
       }
     }
