@@ -1007,6 +1007,7 @@
       line-height: 1.3;
       margin: 20px 0;
       color: white;
+      width: 590px;
       font-family: var(--font-display-semibold);
 
       @media (max-width: 768px) {
@@ -1025,6 +1026,7 @@
     .hero-left p {
       color: #d1d5db;
       margin-bottom: 30px;
+      width: 385px;
     }
 
     .big {
@@ -1055,9 +1057,9 @@
 
     .people {
       position: absolute;
-      bottom: 0;
-      right: 40px;
-      width: 360px;
+      bottom: -10px;
+      right: -100px;
+      width: 890px;
       z-index: 3;
     }
 
@@ -1073,8 +1075,8 @@
     }
 
     .students {
-      top: 80px;
-      left: -40px;
+      top: -10px;
+      left: -20px;
     }
 
     .employees {
@@ -1094,6 +1096,9 @@
     }
 
     .hero-actions {
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
       @media (max-width: 768px) {
         flex-direction: column;
         gap: 10px;
@@ -1663,7 +1668,7 @@
             transition: transform 0.4s ease-out;
             /* padding: 10px; */
             img {
-              width: 200px;
+              width: 145px;
               height: 200px;
               stroke-width: 1.5;
               stroke: #ff3b30;
@@ -2105,8 +2110,18 @@
           color: white;
         }
         & > .flex {
-          flex-direction: column;
+          flex-direction: row;
           width: 100%;
+          align-items: center;
+          gap: 59px;
+          flex-wrap: nowrap;
+
+          img {
+            width: 470px;
+            height: 540px;
+            object-fit: cover;
+            object-position: left;
+          }
         }
 
         .item {
@@ -4095,6 +4110,10 @@ section.pricing-sec {
   .erp-card .icon {
     font-size: 42px;
     margin-bottom: 20px;
+
+    img {
+      width: 95px;
+    }
   }
   .erp-card:hover .icon {
     display: none;
@@ -4189,7 +4208,10 @@ section.pricing-sec {
   .feature-card .icon {
     font-size: 70px;
     color: #ff9800;
-    margin-bottom: 16px;
+
+    img {
+      width: 130px;
+    }
   }
 
   .feature-card h3 {
