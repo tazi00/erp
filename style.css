@@ -80,8 +80,8 @@
 
 @layer base {
   :root {
-    --font-text: "InterVar", system-ui, -apple-system, Segoe UI, Roboto, Arial,
-      sans-serif;
+    --font-text:
+      "InterVar", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     --font-display-bold: "Poppins-bold", system-ui, sans-serif;
     --font-display-semibold: "Poppins-semibold", system-ui, sans-serif;
     --font-display-medium: "Poppins-medium", system-ui, sans-serif;
@@ -551,7 +551,9 @@
     padding: 12px 16px;
     font-size: 16px;
     border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
   }
 
   .sidebar-nav li a:hover {
@@ -620,7 +622,9 @@
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
   }
 
   .sidebar-overlay.active {
@@ -1387,7 +1391,8 @@
           border-radius: 4px;
           transform: rotate(-23deg) skew(-10deg) translateZ(0);
           transform-origin: left center;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25),
+          box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.25),
             0 3px 8px rgba(0, 0, 0, 0.18);
           perspective: 800px;
           &::after {
@@ -1631,7 +1636,9 @@
         padding: 32px 28px;
         border-radius: 16px;
         border: 1px solid #31191949;
-        box-shadow: inset 0 4px 114px 10px #ffffff14, 0px 0px 5px 1px #ffffff45;
+        box-shadow:
+          inset 0 4px 114px 10px #ffffff14,
+          0px 0px 5px 1px #ffffff45;
         gap: 0;
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         overflow: hidden;
@@ -1761,8 +1768,10 @@
         &.red {
           &:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(255, 59, 48, 0.15),
-              0 8px 16px rgba(255, 59, 48, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+            box-shadow:
+              0 20px 40px rgba(255, 59, 48, 0.15),
+              0 8px 16px rgba(255, 59, 48, 0.1),
+              0 2px 6px rgba(0, 0, 0, 0.08);
 
             &::before {
               opacity: 1;
@@ -1801,8 +1810,10 @@
         &.blue {
           &:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(48, 69, 255, 0.15),
-              0 8px 16px rgba(48, 69, 255, 0.1), 0 2px 6px rgba(0, 0, 0, 0.08);
+            box-shadow:
+              0 20px 40px rgba(48, 69, 255, 0.15),
+              0 8px 16px rgba(48, 69, 255, 0.1),
+              0 2px 6px rgba(0, 0, 0, 0.08);
 
             &::before {
               opacity: 1;
@@ -2004,7 +2015,8 @@
         -webkit-backdrop-filter: blur(23px);
         border-radius: 20px;
         border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.1),
           inset 0 1px 0 rgba(255, 255, 255, 0.5),
           inset 0 -1px 0 rgba(255, 255, 255, 0.1),
           inset 0 0 22px 11px rgba(255, 255, 255, 1.1);
@@ -2015,7 +2027,8 @@
         width: 120px;
         justify-content: center;
         align-items: center;
-        transition: transform 180ms var(--anim-ease),
+        transition:
+          transform 180ms var(--anim-ease),
           box-shadow 180ms var(--anim-ease);
         img {
           width: 70px;
@@ -2433,7 +2446,8 @@
       background-color: #fffffffa;
       padding-block: 40px;
       padding-inline: 30px;
-      box-shadow: inset 0px -3px 41px 11px rgb(0 0 0 / 10%),
+      box-shadow:
+        inset 0px -3px 41px 11px rgb(0 0 0 / 10%),
         0px -3px 8px 4px rgba(17, 0, 255, 0.19);
       border: 1px solid #002fff2e;
       border-radius: 10px;
@@ -2881,7 +2895,9 @@ section.pricing {
     border: 1px solid #cf030333;
     box-shadow: 0 4px 44px 10px #da000005;
     text-align: left;
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
 
     @media (max-width: 600px) {
       margin-inline: 20px;
@@ -3133,7 +3149,9 @@ p {
   justify-content: center;
   align-items: center;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
   cursor: pointer;
 }
 .tech-planet:hover {
@@ -3877,7 +3895,9 @@ section.pricing-sec {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
   z-index: 100;
 }
 
@@ -4275,6 +4295,11 @@ section.pricing-sec {
     margin-top: 4px;
   }
 
+  .comm-list .icon img {
+    width: 50px;
+    height: 50px;
+  }
+
   .comm-list h4 {
     font-size: 18px;
     margin-bottom: 6px;
@@ -4399,7 +4424,9 @@ section.pricing-sec {
     position: relative;
     overflow: hidden;
     border: 1px solid #764ba2;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
   }
@@ -4597,7 +4624,8 @@ section.pricing-sec {
   border-radius: 24px;
   position: relative;
   overflow: hidden;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 10% 20%,
       rgba(118, 75, 162, 0.03) 0%,
       transparent 20%
@@ -4624,7 +4652,9 @@ section.pricing-sec {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02), 0 5px 10px rgba(0, 0, 0, 0.01);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.02),
+    0 5px 10px rgba(0, 0, 0, 0.01);
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
   transform: translateY(20px);
@@ -4634,7 +4664,8 @@ section.pricing-sec {
 .addon-card:hover {
   transform: translateY(-8px);
   border-color: #c7d2fe;
-  box-shadow: 0 25px 40px rgba(102, 126, 234, 0.1),
+  box-shadow:
+    0 25px 40px rgba(102, 126, 234, 0.1),
     0 15px 25px rgba(0, 0, 0, 0.05);
 }
 
